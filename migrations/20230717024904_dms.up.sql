@@ -1,0 +1,7 @@
+CREATE TABLE dms (
+    id SERIAL PRIMARY KEY,
+    to_pubkey_id INTEGER NOT NULL REFERENCES pubkeys (id) ON DELETE CASCADE,
+    from_pubkey_id INTEGER NOT NULL REFERENCES pubkeys (id) ON DELETE CASCADE,
+    size BIGINT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL
+);
